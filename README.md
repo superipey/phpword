@@ -1,16 +1,47 @@
 # Modified PHPWord
 
-[![Latest Stable Version](https://poser.pugx.org/phpoffice/phpword/v/stable.png)](https://packagist.org/packages/phpoffice/phpword)
-[![Build Status](https://travis-ci.org/PHPOffice/PHPWord.svg?branch=master)](https://travis-ci.org/PHPOffice/PHPWord)
-[![Code Quality](https://scrutinizer-ci.com/g/PHPOffice/PHPWord/badges/quality-score.png?s=b5997ce59ac2816b4514f3a38de9900f6d492c1d)](https://scrutinizer-ci.com/g/PHPOffice/PHPWord/)
-[![Code Coverage](https://scrutinizer-ci.com/g/PHPOffice/PHPWord/badges/coverage.png?s=742a98745725c562955440edc8d2c39d7ff5ae25)](https://scrutinizer-ci.com/g/PHPOffice/PHPWord/)
-[![Total Downloads](https://poser.pugx.org/phpoffice/phpword/downloads.png)](https://packagist.org/packages/phpoffice/phpword)
-[![License](https://poser.pugx.org/phpoffice/phpword/license.png)](https://packagist.org/packages/phpoffice/phpword)
-[![Join the chat at https://gitter.im/PHPOffice/PHPWord](https://img.shields.io/badge/GITTER-join%20chat-green.svg)](https://gitter.im/PHPOffice/PHPWord)
-
 This is only Modified PHPWord library based on PHPOffice/PHPWord library. I just put some modification in Word TemplateProcessor to recognize Images as a Template in the Document.
 
 Thank you
+
+## Installation
+This library is installed via [Composer](https://getcomposer.org/).
+To [add a dependency](https://getcomposer.org/doc/04-schema.md#package-links>) to PHPWord in your project, either
+
+Run the following to use the latest master version
+```sh
+    composer require phpoffice/phpword:dev-master
+```
+You can of course also manually edit your composer.json file
+```json
+{
+    "require": {
+       "superipey/phpword": "dev-master"
+    }
+}
+```
+
+## Getting Started
+First Step
+-------
+To try this library modification, first create the template with the image placed anywhere in your document, right click on the image, then select **Format AutoShape/Pictures**
+![Figure 1](https://uymikg.bn1303.livefilestore.com/y4mpp0pGKTovYVCBRtu5jGJifUJtgu3iNjn0gvEnackzvYnlau-I9J2xhNDcQgvg5oKSACYGAyXGLj5drcLc2MsaQ5UiAruq_ui5VW7X6pUBOSNf-_1Vch68MfV_hRDo2pxrvI7JHY6XFdcHDEklfWgPduzVeRYANnw98blAWIYXY4BMrRrQXAmuaRYxS6NP3y1WMiCibZPC-63Y_FPyGQy7w?width=660&height=371&cropmode=none "Figure 1")
+
+Second Step
+-------
+Type your fieldname in the **Alternative text**
+![Figure 2](https://vcmikg.bn1303.livefilestore.com/y4mT5pV8FNSwsyN6YLfv0rSl3-aiF66-ncFYfISlICokoa76uZ-sbYAZnnNZ9MJpthW3XnuiH4bjjVJlatM5tEpOMzGcOgFtFEbGJm8KNC6GMQocfjUbfsK7QwVwIOg9iWFj0zadiTb-JadgdyyhMB0asydmUI3A4yTRIWFuAmQJ3ik6822YB0nmPqeSzUwcCv5FmkQDt_iuyOzKZJy2nxMWA?width=586&height=660&cropmode=none "Figure 2")
+
+Third Step
+-------
+Use **setImageValueAlt** to set the image
+```php
+$template->setImageValueAlt(field, path-to-file);
+```
+Example:
+```php
+$template->setImageValueAlt("foto", "./uploads/foto/ferry.png");
+```
 
 ## License
 
