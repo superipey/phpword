@@ -10,7 +10,7 @@ To [add a dependency](https://getcomposer.org/doc/04-schema.md#package-links>) t
 
 Run the following to use the latest master version
 ```sh
-    composer require phpoffice/phpword:dev-master
+    composer require superipey/phpword:dev-master
 ```
 You can of course also manually edit your composer.json file
 ```json
